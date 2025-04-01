@@ -26,6 +26,7 @@ def extract_tool_return(
         print(f"JSON OUTPUT STRING: {json_output}")  # noqa: T201
     else:
         print(f"JSON OUTPUT OBJECT: {type(json_output)}, {json_output}")  # noqa: T201
+    print(f"ALLOW PARTIAL: {allow_partial}")  # noqa: T201
 
     json_obj = (
         jiter.from_json(
