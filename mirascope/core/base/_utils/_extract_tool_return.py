@@ -31,7 +31,7 @@ def extract_tool_return(
     json_obj = (
         jiter.from_json(
             json_output.encode(),
-            partial_mode="trailing-strings" if allow_partial else "off",
+            partial_mode="trailing-strings" if allow_partial else "trailing-strings",
         )
         if isinstance(json_output, str)
         else json_output
