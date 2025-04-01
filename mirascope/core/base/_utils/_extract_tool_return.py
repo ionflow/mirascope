@@ -21,6 +21,15 @@ def extract_tool_return(
     allow_partial: bool,
     fields_from_call_args: dict[str, Any],
 ) -> _ResponseModelT:
+    # Debug print to see raw json_output
+    if isinstance(json_output, str):
+        print(f"JSON OUTPUT STRING: {json_output}")  # noqa: T201
+        # Optional: print it with line numbers for easier debugging
+        for i, line in enumerate(json_output.splitlines(), 1):
+            print(f"{i:>3}: {line}")  # noqa: T201
+    else:
+        print(f"JSON OUTPUT OBJECT: {type(json_output)}, {json_output}")  # noqa: T201
+
     json_obj = (
         jiter.from_json(
             json_output.encode(),
